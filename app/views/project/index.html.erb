@@ -8,3 +8,17 @@
 <% end %>
 </ul>
 <% end %>
+
+<%= form_with scope: :todo, local: true do |form| %>
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_field :text %>
+  </p>
+<%= select_tag "projects", options_from_collection_for_select(@projects, "id", "title") %>
+ 
+  <p>
+    <%= form_tag todos_path, id: "todo_form" do %>
+    <%= link_to "Submit", todos_path, id: "todo_create" %>
+	<% end %>
+  </p>
+<% end %>

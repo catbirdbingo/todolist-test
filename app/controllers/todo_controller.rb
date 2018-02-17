@@ -3,7 +3,7 @@ class TodoController < ApplicationController
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
 
   def index
-  	@todos = Todo.all
+  	@todo = Todo.all
   end
 
   def new
@@ -44,7 +44,7 @@ class TodoController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_params
-      params.require(:todo).permit(:text, :isCompleted)
+      params.require(:todo).permit(:text, :isCompleted, :project_id)
     end
 
 

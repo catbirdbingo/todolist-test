@@ -13,3 +13,7 @@
 //= require rails-ujs
 
 //= require_tree .
+
+$(document).on("click", "#todo_create", function(){
+   $("#todo_form").submit();
+});
